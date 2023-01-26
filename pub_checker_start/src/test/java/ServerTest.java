@@ -9,12 +9,17 @@ public class ServerTest {
     Server server;
     Guest guest;
     Guest guest2;
+    Guest guest3;
+
+    Guest guest4;
 
     @BeforeEach
     public void setUp() {
         server = new Server();
-        guest = new Guest("Jack",16);
-        guest2 = new Guest("Jill",21);
+        guest = new Guest("Jack",21,5);
+        guest2 = new Guest("Jill",16,5);
+        guest3 = new Guest("John",21,3);
+        guest4 = new Guest("Jane",21,5);
     }
 
     // TODO: test that guest can only get served if over 18
@@ -23,16 +28,28 @@ public class ServerTest {
     public void canGuestOnlyGetServedIfOver18() {
 
         Boolean result = server.canServeGuest(guest);
-        assertThat(result).isEqualTo(false);
+        assertThat(result).isEqualTo(true);
 
-        boolean result2 = server.canServeGuest(guest2);
-        assertThat(result2).isEqualTo(true);
+        Boolean result2 = server.canServeGuest(guest2);
+        assertThat(result2).isEqualTo(false);
 
     }
 
-
-
     // TODO: test that guest can only get served if has enough money to buy a drink (every drink is £5)
+
+    @Test
+    public void CanGuestAffordDrink(){
+
+        Boolean AffordDrink = server.canServeGuest(guest2);
+        assertThat(AffordDrink).isEqualTo(false);
+
+        AffordDrink = server.canServeGuest(guest3);
+        assertThat(AffordDrink).isEqualTo(false);
+
+        AffordDrink = server.canServeGuest(guest4);
+        assertThat(AffordDrink).isEqualTo(true);
+
+    }
 
     // TODO: test that guest can only get served if sober enough (set sobriety level on guest)
 

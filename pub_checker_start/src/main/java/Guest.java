@@ -4,17 +4,17 @@ public class Guest {
 
     private int age;
 //    private char currency;
-//    private int wallet;
+    private int wallet;
 //    private int sobriety;
 //    private boolean isBanned;
 
 
-    public Guest(String name,int age){
+    public Guest(String name,int age, int wallet){
 //        int wallet,int sobriety,boolean isBanned, char currency){
         this.name = name;
         this.age = age;
+        this.wallet = wallet;
 //        this.currency = currency;
-//        this.wallet = wallet;
 //        this.sobriety = sobriety;
 //        this.isBanned = isBanned;
     }
@@ -45,13 +45,13 @@ public class Guest {
 //        this.currency = currency;
 //    }
 //
-//    public int getWallet (){
-//        return wallet;
-//    }
-//
-//    public void setWallet(int wallet) {
-//        this.wallet = wallet;
-//    }
+    public int getWallet (){
+        return wallet;
+    }
+
+    public void setWallet(int wallet) {
+        this.wallet = wallet;
+    }
 //
 //    public int getSobriety(){
 //        return sobriety;
