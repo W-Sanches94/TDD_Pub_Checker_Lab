@@ -5,17 +5,16 @@ public class Guest {
     private int age;
 //    private char currency;
     private int wallet;
-//    private int sobriety;
+    private int sobriety;
 //    private boolean isBanned;
 
 
-    public Guest(String name,int age, int wallet){
-//        int wallet,int sobriety,boolean isBanned, char currency){
+    public Guest(String name,int age, int wallet, int sobriety){
         this.name = name;
         this.age = age;
         this.wallet = wallet;
 //        this.currency = currency;
-//        this.sobriety = sobriety;
+        this.sobriety = sobriety;
 //        this.isBanned = isBanned;
     }
 
@@ -52,14 +51,14 @@ public class Guest {
     public void setWallet(int wallet) {
         this.wallet = wallet;
     }
-//
-//    public int getSobriety(){
-//        return sobriety;
-//    }
-//
-//    public void setSobriety(int sobriety){
-//        this.sobriety = sobriety;
-//    }
+
+    public int getSobriety(){
+        return sobriety;
+    }
+
+    public void setSobriety(int sobriety){
+        this.sobriety = sobriety;
+    }
 //
 //    public boolean getIsBanned(){
 //        return isBanned;
