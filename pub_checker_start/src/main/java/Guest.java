@@ -1,14 +1,17 @@
 public class Guest {
 
     private String name;
+
+    private int age;
     private char currency;
     private int wallet;
     private int sobriety;
     private boolean isBanned;
 
 
-    public Guest(String name,int wallet,int sobriety,boolean isBanned, char currency){
+    public Guest(String name,int age,int wallet,int sobriety,boolean isBanned, char currency){
         this.name = name;
+        this.age = age;
         this.currency = currency;
         this.wallet = wallet;
         this.sobriety = sobriety;
@@ -23,6 +26,14 @@ public class Guest {
     }
     public void setName(String name) {
         this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 
     public char getCurrency() {
