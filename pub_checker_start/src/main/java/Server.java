@@ -3,7 +3,7 @@ public class Server {
 
         //guest age over 18?
 
-        if (guest.getAge() >= 18 && guest.getWallet() >= 5 && guest.getSobriety() >= 50 && guest.getIsNotBanned()) {
+        if (guest.getAge() >= 18 && guest.getWallet() >= 5 && guest.getSobriety() >= 50 && guest.getIsNotBanned() && guest.getCurrency() == '£') {
             return true;
         }
         return false;

@@ -13,16 +13,20 @@ public class ServerTest {
     Guest guest4;
     Guest guest5;
     Guest guest6;
+    Guest guest7;
+    Guest guest8;
 
     @BeforeEach
     public void setUp() {
         server = new Server();
-        guest = new Guest("Jack",21,5,50, true);
-        guest2 = new Guest("Jill",16,5,50, true);
-        guest3 = new Guest("John",21,3,50, true);
-        guest4 = new Guest("Jane",21,5,50, true);
-        guest5 = new Guest("Joel",21,5,40, true);
-        guest6 = new Guest("janette",21,5,50,false);
+        guest = new Guest("Jack",21,5,50, true, '£');
+        guest2 = new Guest("Jill",16,5,50, true, '£');
+        guest3 = new Guest("John",21,3,50, true, '£');
+        guest4 = new Guest("Jane",21,5,50, true, '£');
+        guest5 = new Guest("Joel",21,5,40, true, '£');
+        guest6 = new Guest("janette",21,5,50,false, '£');
+        guest7 = new Guest("joseph",21,5,50,true, '£');
+        guest8 = new Guest("jasmine",21,5,50,true, '$');
     }
 
     // TODO: test that guest can only get served if over 18
@@ -81,6 +85,17 @@ public class ServerTest {
     }
 
     // TODO: test that guest can only get served if guest can pay in local currency (add £ char as currency)
+
+    @Test
+    public void isGuestCurrencyCorrect(){
+
+        boolean correctCurrency = server.canServeGuest(guest7);
+        assertThat(correctCurrency).isEqualTo(true);
+
+        correctCurrency = server.canServeGuest(guest8);
+        assertThat(correctCurrency).isEqualTo(false);
+
+    }
 
     // EXTENSIONS
 
