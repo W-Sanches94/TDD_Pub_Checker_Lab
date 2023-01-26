@@ -12,15 +12,17 @@ public class ServerTest {
     Guest guest3;
     Guest guest4;
     Guest guest5;
+    Guest guest6;
 
     @BeforeEach
     public void setUp() {
         server = new Server();
-        guest = new Guest("Jack",21,5,50);
-        guest2 = new Guest("Jill",16,5,50);
-        guest3 = new Guest("John",21,3,50);
-        guest4 = new Guest("Jane",21,5,50);
-        guest5 = new Guest("Joel",21,5,40);
+        guest = new Guest("Jack",21,5,50, true);
+        guest2 = new Guest("Jill",16,5,50, true);
+        guest3 = new Guest("John",21,3,50, true);
+        guest4 = new Guest("Jane",21,5,50, true);
+        guest5 = new Guest("Joel",21,5,40, true);
+        guest6 = new Guest("janette",21,5,50,false);
     }
 
     // TODO: test that guest can only get served if over 18
@@ -66,6 +68,17 @@ public class ServerTest {
     }
 
     // TODO: test that guest can only get served if guest is not banned from the pub
+
+    @Test
+    public void isGuestBanned() {
+
+        Boolean isNotBanned = server.canServeGuest(guest4);
+        assertThat(isNotBanned).isEqualTo(true);
+
+        isNotBanned = server.canServeGuest(guest6);
+        assertThat(isNotBanned).isEqualTo(false);
+
+    }
 
     // TODO: test that guest can only get served if guest can pay in local currency (add £ char as currency)
 

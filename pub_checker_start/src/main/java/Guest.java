@@ -6,16 +6,16 @@ public class Guest {
 //    private char currency;
     private int wallet;
     private int sobriety;
-//    private boolean isBanned;
+    private boolean isNotBanned;
 
 
-    public Guest(String name,int age, int wallet, int sobriety){
+    public Guest(String name, int age, int wallet, int sobriety,boolean isNotBanned){
         this.name = name;
         this.age = age;
         this.wallet = wallet;
 //        this.currency = currency;
         this.sobriety = sobriety;
-//        this.isBanned = isBanned;
+        this.isNotBanned = isNotBanned;
     }
 
     // GETTERS & SETTERS
@@ -59,12 +59,12 @@ public class Guest {
     public void setSobriety(int sobriety){
         this.sobriety = sobriety;
     }
-//
-//    public boolean getIsBanned(){
-//        return isBanned;
-//    }
-//
-//    public void setBanned(boolean banned) {
-//        isBanned = banned;
-//    }
+
+    public boolean getIsNotBanned(){
+        return isNotBanned;
+    }
+
+    public void setIsNotBanned(boolean isNotBanned) {
+        this.isNotBanned = isNotBanned;
+    }
 }
